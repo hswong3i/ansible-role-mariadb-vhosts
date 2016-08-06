@@ -1,0 +1,8 @@
+---
+# test file for hswong3i.mariadb_vhosts
+
+- hosts: localhost
+  remote_user: root
+  roles:
+    - hswong3i.mariadb
+    - ansible-role-mariadb-vhosts
