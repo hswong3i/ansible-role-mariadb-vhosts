@@ -7,6 +7,7 @@
     password: "{{ mysql_vhosts_pass }}"
     config_file: "/root/.my.cnf"
   when: mysql_vhosts_pass is string
+  run_once: yes
   tags: hswong3i.mariadb_vhosts
 
 - name: create mysql db
@@ -15,6 +16,7 @@
     encoding: "{{ mysql_vhosts_encoding }}"
     collation: "{{ mysql_vhosts_collation }}"
     config_file: "/root/.my.cnf"
+  run_once: yes
   tags: hswong3i.mariadb_vhosts
 
 - name: append privs for mysql user
@@ -26,4 +28,5 @@
     append_privs: "yes"
     config_file: "/root/.my.cnf"
   with_items: "{{ mysql_vhosts_privs }}"
+  run_once: yes
   tags: hswong3i.mariadb_vhosts
