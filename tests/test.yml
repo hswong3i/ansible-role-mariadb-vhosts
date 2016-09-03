@@ -4,5 +4,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - hswong3i.mariadb
+    - ansible-role-mariadb
     - ansible-role-mariadb-vhosts
